@@ -6,7 +6,7 @@
 CREATE PROCEDURE drop_database_tables
 AS
 BEGIN
-	/****** Script for dropping Work Table  ******/
+	/****** Script for dropping Maintenance Table  ******/
 	DROP TABLE [dbo].[Maintenance];
 
 	/****** Script for dropping Release Table  ******/
@@ -42,16 +42,7 @@ BEGIN
 	/****** Script for dropping Product Schema Table  ******/
 	DROP TABLE [dbo].[Product Schema];
 
-	/****** Script for dropping Features In Version Table  ******/
-	DROP TABLE [dbo].[Features In Version];
-		
 	/****** Script for dropping Feature Type Table  ******/
 	DROP TABLE [dbo].[Feature Type];
-	
-	/****** Script for dropping Feature Table  ******/
-	DROP TABLE [dbo].[Bug];
-	
-	/****** Script for dropping Feature Table  ******/
-	DROP TABLE [dbo].[Ticket];
 END
 GO
