@@ -1,7 +1,10 @@
 -- =============================================
 -- Author:		Vicente Figueroa
 -- Create date:	5/14/2019
--- Description:	Get Release associated from Feature
+-- Description:	Get Release report that will
+--				list features for a release
+--				based on Feature approved date 
+--				and specific Feature Name.
 -- =============================================
 CREATE PROCEDURE get_release
 	@featureName nvarchar(255), @releaseDate datetime 
