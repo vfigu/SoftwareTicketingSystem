@@ -14,7 +14,7 @@ BEGIN
 		[Title] nvarchar(255),
 		[Assigned To] int,
 		[State ID] int,
-		[Area Path] nvarchar(255),
+		[Version ID] int,
 		[Comment Count] int,
 		[Created Date] datetime,
 		[Accepted By] int,
@@ -60,15 +60,19 @@ BEGIN
 		[Product Schema ID] int,
 		[Product Log] nvarchar(255),
 		[Approved] nvarchar(10),
-
+		
 		PRIMARY KEY ([Product ID]),
 	)
 	
 	/****** Query for creating Version Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Version]
 	CREATE TABLE [dbo].[Version] (
+		[Version ID] int,
+		[Area Path] nvarchar(255),
 		[Product ID] int,
 		[Release ID] int,
+		
+		PRIMARY KEY ([Version ID]),
 	)
 	
 	/****** Query for creating Feature Table  ******/
@@ -169,6 +173,9 @@ BEGIN
 	ALTER TABLE [dbo].[Maintenance]
 		ADD CONSTRAINT FK__Activity
 		FOREIGN KEY ([Activity ID]) REFERENCES [Activity]([Activity ID])
+	ALTER TABLE [dbo].[Maintenance]
+		ADD CONSTRAINT FK__VersionID
+		FOREIGN KEY ([Version ID]) REFERENCES [Version]([Version ID])
 	ALTER TABLE [dbo].[Maintenance]
 		ADD CONSTRAINT FK__SystemID
 		FOREIGN KEY ([System ID]) REFERENCES [System]([System ID])

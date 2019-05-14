@@ -15,7 +15,7 @@ BEGIN
 	ALTER TABLE [dbo].[Version]
 		DROP CONSTRAINT IF EXISTS FK__ProductID
 	ALTER TABLE [dbo].[Version]
-		DROP CONSTRAINT IF EXISTS FK__ReleaseNum
+		DROP CONSTRAINT IF EXISTS FK__ReleaseID
 
 	/****** Query for setting FK on Maintenance Table  ******/
 	ALTER TABLE [dbo].[Maintenance]
