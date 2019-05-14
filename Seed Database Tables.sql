@@ -3,10 +3,10 @@
 -- Create date:	5/14/2019
 -- Description:	Seed Database Tables with Data
 -- =============================================
-CREATE PROCEDURE seed_database_tables
+CREATE PROCEDURE [Seed Database Tables]
 AS
 BEGIN
-	/****** Script for creating System Table  ******/
+	/****** Query for seeding System Table  ******/
 	INSERT INTO [dbo].[System] (
 		[System ID],
 		[Abbreviation],
@@ -17,7 +17,7 @@ BEGIN
 		(2, 'CBS', 'Customer Bug System'),
 		(3, 'TFS', 'Team Foundation System')
 
-	/****** Script for creating Work Item Type Table  ******/
+	/****** Query for seeding Work Item Type Table  ******/
 	INSERT INTO [dbo].[Work Item Type] (
 		[Work Item Type ID],
 		[Work Item Type Name],
@@ -29,7 +29,7 @@ BEGIN
 		(3,'User Story',''),
 		(4,'Other','')
 	
-	/****** Script for creating Stakeholder Table  ******/
+	/****** Query for seeding Stakeholder Table  ******/
 	INSERT INTO [dbo].[Stakeholder] (
 		[Stakeholder ID],
 		[Stakeholder Name],
@@ -43,7 +43,7 @@ BEGIN
 		(5, 'Product Owner', 'ceo@outlook.com'),
 		(6, 'Invester #1', 'geocrop@gmail.com')
 
-	/****** Script for creating State Table  ******/
+	/****** Query for seeding State Table  ******/
 	INSERT INTO [dbo].[State] (
 		[State ID],
 		[State Name],
@@ -54,7 +54,7 @@ BEGIN
 		(2, 'Closed',''),
 		(3, 'Resolved','')
 	
-	/****** Script for creating Activity Table  ******/
+	/****** Query for seeding Activity Table  ******/
 	INSERT INTO [dbo].[Activity] (
 		[Activity ID],
 		[Activity Name],
@@ -66,7 +66,7 @@ BEGIN
 		(3, 'Deployment',''),
 		(4, 'Legacy','')
 	
-	/****** Script for creating Product Type Table  ******/
+	/****** Query for seeding Product Type Table  ******/
 	INSERT INTO [dbo].[Product Type] (
 		[Product Type ID],
 		[Product Type Name],
@@ -77,7 +77,7 @@ BEGIN
 		(2,'Streaming Service','Subscription based software that readily available'),
 		(3,'Other','')
 	
-	/****** Script for creating Product Schema Table  ******/
+	/****** Query for seeding Product Schema Table  ******/
 	INSERT INTO [dbo].[Product Schema] (
 		[Product Schema ID],
 		[Product Schema Name],
@@ -87,7 +87,7 @@ BEGIN
 		(1,'Cross Platform Application','PC/MAC/iOS/Android'),
 		(2,'Web Application','All browsers supported')
 	
-	/****** Script for creating Feature Type Table  ******/
+	/****** Query for seeding Feature Type Table  ******/
 	INSERT INTO [dbo].[Feature Type] (
 		[Feature Type ID],
 		[Feature Type Name],
@@ -99,7 +99,7 @@ BEGIN
 		(3,'performance',''),
 		(5,'styling','')
 
-	/****** Script for creating Feature Table  ******/
+	/****** Query for seeding Feature Table  ******/
 	INSERT INTO [dbo].[Feature] (
 		[Feature ID],
 		[Feature Name],
@@ -118,7 +118,7 @@ BEGIN
 		(3002,'Authentication performance improved','',3,convert(datetime, '5/12/2019')),
 		(3131,'User search using IP Address','',1,convert(datetime, '5/12/2019'))
 
-	/****** Script for creating Release Table  ******/
+	/****** Query for seeding Release Table  ******/
 	INSERT INTO [dbo].[Release] (
 	    [Release ID],
 		[Release Num],
@@ -139,7 +139,7 @@ BEGIN
 		(10,305,'Authentication fixes',CONVERT(datetime, '5/12/2019'),3002),
 		(11,106,'User search',CONVERT(datetime, '5/12/2019'),3131)
 
-	/****** Script for creating Product Table  ******/
+	/****** Query for seeding Product Table  ******/
 	INSERT INTO [dbo].[Product] (
 		[Product ID],
 		[Product Name],
@@ -155,7 +155,7 @@ BEGIN
 		(3,'Stream Flow','Service for streaming new services on the fly through the browser',2,2,'','pending'),
 		(4,'Cinder','Dating application for computer scientists',3,1,'','cancelled')
 	
-	/****** Script for creating Version Table  ******/
+	/****** Query for seeding Version Table  ******/
 	INSERT INTO [dbo].[Version] (
 		[Product ID],
 		[Release ID]
@@ -173,7 +173,7 @@ BEGIN
 		(3,10),
 		(4,11)
 	
-	/****** Script for seeding Maintenance Table  ******/
+	/****** Query for seeding Maintenance Table  ******/
 	INSERT INTO [dbo].[Maintenance] (
 		[Work Item Type ID],
 		[Maintenance ID],

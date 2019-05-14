@@ -3,10 +3,10 @@
 -- Create date:	5/14/2019
 -- Description:	Create Database Tables from Scratch
 -- =============================================
-CREATE PROCEDURE create_database_tables
+CREATE PROCEDURE [Create Database Tables]
 AS
 BEGIN
-	/****** Script for creating Maintenance Table  ******/
+	/****** Query for creating Maintenance Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Maintenance]
 	CREATE TABLE [dbo].[Maintenance] (
 		[Work Item Type ID] int,
@@ -28,7 +28,7 @@ BEGIN
 		PRIMARY KEY ([Maintenance ID]),
 	)
 
-	/****** Script for creating Release Table  ******/
+	/****** Query for creating Release Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Release]
 	CREATE TABLE [dbo].[Release] (
 		[Release ID] int,
@@ -40,7 +40,7 @@ BEGIN
 		PRIMARY KEY ([Release ID]),
 	)
 
-	/****** Script for creating System Table  ******/
+	/****** Query for creating System Table  ******/
 	DROP TABLE IF EXISTS [dbo].[System]
 	CREATE TABLE [dbo].[System] (
 		[System ID] int,
@@ -50,7 +50,7 @@ BEGIN
 		PRIMARY KEY ([System ID])
 	)
 
-	/****** Script for creating Product Table  ******/
+	/****** Query for creating Product Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Product]
 	CREATE TABLE [dbo].[Product] (
 		[Product ID] int,
@@ -64,14 +64,14 @@ BEGIN
 		PRIMARY KEY ([Product ID]),
 	)
 	
-	/****** Script for creating Version Table  ******/
+	/****** Query for creating Version Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Version]
 	CREATE TABLE [dbo].[Version] (
 		[Product ID] int,
 		[Release ID] int,
 	)
 	
-	/****** Script for creating Feature Table  ******/
+	/****** Query for creating Feature Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Feature]
 	CREATE TABLE [dbo].[Feature] (
 		[Feature ID] int,
@@ -83,7 +83,7 @@ BEGIN
 		PRIMARY KEY ([Feature ID])
 	)
 	
-	/****** Script for creating Work Item Type Table  ******/
+	/****** Query for creating Work Item Type Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Work Item Type]
 	CREATE TABLE [dbo].[Work Item Type] (
 		[Work Item Type ID] int,
@@ -93,7 +93,7 @@ BEGIN
 		PRIMARY KEY ([Work Item Type ID])
 	)
 	
-	/****** Script for creating Stakeholder Table  ******/
+	/****** Query for creating Stakeholder Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Stakeholder]
 	CREATE TABLE [dbo].[Stakeholder] (
 		[Stakeholder ID] int,
@@ -103,7 +103,7 @@ BEGIN
 		PRIMARY KEY ([Stakeholder ID])
 	)
 
-	/****** Script for creating State Table  ******/
+	/****** Query for creating State Table  ******/
 	DROP TABLE IF EXISTS [dbo].[State]
 	CREATE TABLE [dbo].[State] (
 		[State ID] int,
@@ -113,7 +113,7 @@ BEGIN
 		PRIMARY KEY ([State ID])
 	)
 	
-	/****** Script for creating Activity Table  ******/
+	/****** Query for creating Activity Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Activity]
 	CREATE TABLE [dbo].[Activity] (
 		[Activity ID] int,
@@ -123,7 +123,7 @@ BEGIN
 		PRIMARY KEY ([Activity ID])
 	)
 	
-	/****** Script for creating Product Type Table  ******/
+	/****** Query for creating Product Type Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Product Type]
 	CREATE TABLE [dbo].[Product Type] (
 		[Product Type ID] int,
@@ -133,7 +133,7 @@ BEGIN
 		PRIMARY KEY ([Product Type ID])
 	)
 		
-	/****** Script for creating Product Schema Table  ******/
+	/****** Query for creating Product Schema Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Product Schema]
 	CREATE TABLE [dbo].[Product Schema] (
 		[Product Schema ID] int,
@@ -143,7 +143,7 @@ BEGIN
 		PRIMARY KEY ([Product Schema ID])
 	)
 			
-	/****** Script for creating Feature Type Table  ******/
+	/****** Query for creating Feature Type Table  ******/
 	DROP TABLE IF EXISTS [dbo].[Feature Type]
 	CREATE TABLE [dbo].[Feature Type] (
 		[Feature Type ID] int,
@@ -153,7 +153,7 @@ BEGIN
 		PRIMARY KEY ([Feature Type ID])
 	)
 	
-	/****** Script for setting FK on Maintenance Table  ******/
+	/****** Query for setting FK on Maintenance Table  ******/
 	ALTER TABLE [dbo].[Maintenance]
 		ADD CONSTRAINT FK__WorkItemTypeID
 		FOREIGN KEY ([Work Item Type ID]) REFERENCES [Work Item Type]([Work Item Type ID])
@@ -173,12 +173,12 @@ BEGIN
 		ADD CONSTRAINT FK__SystemID
 		FOREIGN KEY ([System ID]) REFERENCES [System]([System ID])
 	
-	/****** Script for setting FK on Release Table  ******/
+	/****** Query for setting FK on Release Table  ******/
 	ALTER TABLE [dbo].[Release]
 		ADD CONSTRAINT FK__AssociatedFeatures
 		FOREIGN KEY ([Associated Features]) REFERENCES [dbo].[Feature]([Feature ID])
 	
-	/****** Script for setting FK on Product Table  ******/
+	/****** Query for setting FK on Product Table  ******/
 	ALTER TABLE [dbo].[Product]
 		ADD CONSTRAINT FK__ProductTypeID
 		FOREIGN KEY ([Product Type ID]) REFERENCES [dbo].[Product Type]([Product Type ID])
@@ -186,7 +186,7 @@ BEGIN
 		ADD CONSTRAINT FK__ProductSchemaID
 		FOREIGN KEY ([Product Schema ID]) REFERENCES [dbo].[Product Schema]([Product Schema ID])
 	
-	/****** Script for setting FK on Version Table  ******/
+	/****** Query for setting FK on Version Table  ******/
 	ALTER TABLE [dbo].[Version]
 		ADD CONSTRAINT FK__ProductID
 		FOREIGN KEY ([Product ID]) REFERENCES [dbo].[Product]([Product ID])
@@ -194,7 +194,7 @@ BEGIN
 		ADD CONSTRAINT FK__ReleaseID
 		FOREIGN KEY ([Release ID]) REFERENCES [dbo].[Release]([Release ID])
 	
-	/****** Script for setting FK on Feature Table  ******/
+	/****** Query for setting FK on Feature Table  ******/
 	ALTER TABLE [dbo].[Feature]
 		ADD CONSTRAINT FK__FeatureType
 		FOREIGN KEY ([Feature Type ID]) REFERENCES [dbo].[Feature Type]([Feature Type ID])

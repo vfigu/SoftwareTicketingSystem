@@ -6,7 +6,7 @@
 --				based on Feature approved date 
 --				and specific Feature Name.
 -- =============================================
-CREATE PROCEDURE get_release
+CREATE PROCEDURE [Get Release Information]
 	@featureName nvarchar(255), @releaseDate datetime 
 AS
 BEGIN
